@@ -18,10 +18,10 @@ using namespace std;
 
 
 /*
- *   Classe Etat
+ *   Classe Etape
  *Membres
- *	Damier *Dam		: pointeur sur la structure Damier qui représente la position des cases (cf. Damier.h)
- *	Etat *Parent	: pointeur sur l'état parent. Celui dont est issu cet état. Vaut 0 pour l'état initial
+ *	Etat *etat		: pointeur sur la structure Damier qui représente la position des cases (cf. Damier.h)
+ *	Etape *Parent	: pointeur sur l'état parent. Celui dont est issu cet état. Vaut 0 pour l'état initial
  *	Mouv m			: mouvement ayant fait passer de l'état parent à cet état
  *	int g			: nombre de mouvement depuis l'état initial
  *	int f			: heuristique f=g+Dam->h (pour éviter de recalculer f dans les boucles)
@@ -30,16 +30,16 @@ using namespace std;
  *	Etat *Suivant	: pointeur sur l'état suivant dans les chainnages des listes LEE et LEAE
  *
  *Methodes
- *  Etat *DerivParMouv(Mouv mv);
+ *  Etpe *DerivParMouv(Mouv mv);
  *  				: crée un nouvel objet Etat d'après un mouvement. Retourne 0 si le mouvement est impossible
  *  				: ou si le Damier obtenu est déjà affecté à un état
  *
  *Membres static
- *	static Etat *LEE, *LEAE
+ *	static Etape *LEE, *LEAE
  *					: Points de départ des listes LEE et LEAE
  *
  *Methodes static
- *  static Etat *PopLEAE();
+ *  static Etape *PopLEAE();
  *  				: dépile la liste LEAE
  */
 
@@ -47,7 +47,7 @@ struct Etape {
 	Etat *etat;
 	Etape *Parent;
 	Mouv m;
-	int g,f;
+	int g, f;
 
 	Etape();
 	~Etape();
@@ -61,7 +61,7 @@ struct Etape {
 	static Etape *PopLEAE();
 	void PushInLEE();
 	void PushInLEAE();
-    void AfficheSol(ostream &sortie);
+	void AfficheSol(ostream &sortie);
 };
 
 

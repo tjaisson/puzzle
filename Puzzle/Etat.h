@@ -16,7 +16,7 @@ using namespace std;
 
 /*
  *****************************************
- *             Classe Damier             *
+ *             Classe Etat             *
  *****************************************
  *
  * Le damier est représenté en interne par une chaîne AZT
