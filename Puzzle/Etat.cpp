@@ -116,7 +116,7 @@ ostream& operator<<(ostream &sortie, Etat* D){
 
 void Etat::init(istream &entree){
 	clear();
-	entree >> m >> n;
+	entree >> m >> n >> CV;
 	strSize = n*m+1;
 	Index = new Etat;
 	Index->Str = new char[strSize];
@@ -127,16 +127,23 @@ void Etat::init(istream &entree){
 	for(c=0;c<n;c++) {
 		entree >> tmp;
 		Index->Str[i]=tmp;
-		if(tmp == '#'){
+		if(tmp == CV){
 			Index->cCV=i%n; // devrait être égal à c
 			Index->lCV=i/n; // devrait être égal à l
 			Index->iCV=i;
-		} else {
-			Index->h = Index->h + abs( ((tmp-'A')%n) - c);
-			Index->h = Index->h + abs( ((tmp-'A')/n) - l);
 		}
 		i++;
 	}
 	Index->Str[i] = '\0';
+    i = 0;
+    for (l = 0; l < m; l++)
+        for (c = 0; c < n; c++) {
+            entree >> tmp;
+            if (tmp != CV) {
+                Index->h = Index->h + abs(((tmp - Index->Str[i]) % n) - c);
+                Index->h = Index->h + abs(((tmp - Index->Str[i]) / n) - l);
+            }
+            i++;
+        }
 };
 

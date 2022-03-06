@@ -34,6 +34,7 @@ using namespace std;
 struct Etat {
 	static int n;	//nb colonnes
 	static int m;	//nb lignes
+    static char CV; // caractère de la case vide 
 	static int strSize;  // sera égal à n*m+1 pour ne pas le recalculer
 
 	static Etat *Index;

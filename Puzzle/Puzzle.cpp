@@ -19,8 +19,6 @@ void AffichePasSol(ostream &s) {
 };
 
 int main2() {
-
-
 	ifstream fin;
 	fin.open("..\\Puzzle\\damier.txt");
 	Etat::init(fin);
@@ -49,16 +47,16 @@ int main2() {
 			for (mv = NORD; mv <= OUEST; mv++) {
 				if ((mv != mContr) && ((tmpEtape = EtapeCourante->DerivParMouv(mv)) != NULL)) {
 					tmpEtape->PushInLEAE();
-				};
-			};
-		};
-	};
+				}
+			}
+		}
+	}
 	if (SolTrouv) {
 		AfficheSol(cout, *EtapeCourante);
 	}
 	else {
 		AffichePasSol(cout);
-	};
+	}
 	Etape::clear();
 	Etat::clear();
 	return 0;
@@ -69,4 +67,3 @@ int main()
 {
     return main2();
 }
-

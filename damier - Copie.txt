@@ -1,6 +1,5 @@
-5 5
-  B G H C E
-  F A D I N
-  K L M O J
-  P Q R # S
-  U V W X T
+7 4
+  A B C D E F G
+  H I J L M N Z
+  O P Q K R S U
+  [ W V T Y X #
