@@ -10,7 +10,6 @@ namespace PuzzleSharp
     internal class Etat: IEquatable<Etat>
     {
         protected Mapping map;
-        public const byte CV = 0xFF;
         public byte[,] items;
         public int h;
         public Point cv;
@@ -65,13 +64,13 @@ namespace PuzzleSharp
             for (int i = 0; i < map.size.Width; ++i)
                 for (int j = 0; j < map.size.Height; ++j)
                 {
-                    if (items[i, j] == CV)
+                    if (items[i, j] == Mapping.CV)
                     {
                         nCv = new Point(i, j);
                     }
                     else
                     {
-                        nH += Math.Abs((items   [i, j] % map.size.Width) - i);
+                        nH += Math.Abs((items[i, j] % map.size.Width) - i);
                         nH += Math.Abs((items[i, j] / map.size.Width) - j);
                     }
                 }
@@ -88,7 +87,7 @@ namespace PuzzleSharp
             var nItems = (byte[,])items.Clone();
             byte v = items[nCvV.X, nCvV.Y];
             nItems[cv.X, cv.Y] = v;
-            nItems[nCvV.X, nCvV.Y] = CV;
+            nItems[nCvV.X, nCvV.Y] = Mapping.CV;
             int nH = h + Gain(v, cv, mv);
             return new Etat(map, nItems, nCvV, nH);
         }
@@ -101,11 +100,13 @@ namespace PuzzleSharp
                     if(p.Y <= 0) return null;
                     return new Point(p.X, p.Y - 1);
                 case Mouv.EST:
-                    if (p.X >= map.size.Width) return null;
-                    return new Point(p.X + 1, p.Y);
+                    var nx = p.X + 1;
+                    if (nx >= map.size.Width) return null;
+                    return new Point(nx, p.Y);
                 case Mouv.SUD:
-                    if (p.Y >= map.size.Height) return null;
-                    return new Point(p.X, p.Y + 1);
+                    var ny = p.Y + 1;
+                    if (ny >= map.size.Height) return null;
+                    return new Point(p.X, ny);
                 case Mouv.OUEST:
                     if (p.X <= 0) return null;
                     return new Point(p.X - 1, p.Y);
@@ -119,16 +120,16 @@ namespace PuzzleSharp
             switch (mv)
             {
                 case Mouv.NORD:
-                    if (v / map.size.Width >= p.X) return -1;
+                    if (v / map.size.Width >= p.Y) return -1;
                     return 1;
                 case Mouv.EST:
-                    if (v % map.size.Width <= p.Y) return -1;
+                    if (v % map.size.Width <= p.X) return -1;
                     return 1;
                 case Mouv.SUD:
-                    if (v / map.size.Width <= p.X) return -1;
+                    if (v / map.size.Width <= p.Y) return -1;
                     return 1;
                 case Mouv.OUEST:
-                    if (v % map.size.Width >= p.Y) return -1;
+                    if (v % map.size.Width >= p.X) return -1;
                     return 1;
             }
             return 0;

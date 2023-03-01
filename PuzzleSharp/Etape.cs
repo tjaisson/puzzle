@@ -30,5 +30,14 @@ namespace PuzzleSharp
             this.mv = mv;
             this.g = g;
         }
+
+        public IEnumerable<Etape> History()
+        {
+            if (parent != null)
+            {
+                foreach (var e in parent.History()) yield return e;
+            }
+            yield return this;
+        }
     }
 }

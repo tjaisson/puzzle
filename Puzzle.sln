@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Puzzle", "Puzzle\Puzzle.vcx
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "PuzzleSharp", "PuzzleSharp\PuzzleSharp.shproj", "{EF34B43A-6545-4463-A91C-59AC8C091BD5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuzzleSharpUI", "PuzzleSharpUI\PuzzleSharpUI.csproj", "{63D0FBAF-D285-4BB3-91A2-DD1C365948B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,18 @@ Global
 		{3175AD57-099C-48CA-AF6C-06E009911718}.Release|x64.Build.0 = Release|x64
 		{3175AD57-099C-48CA-AF6C-06E009911718}.Release|x86.ActiveCfg = Release|Win32
 		{3175AD57-099C-48CA-AF6C-06E009911718}.Release|x86.Build.0 = Release|Win32
+		{63D0FBAF-D285-4BB3-91A2-DD1C365948B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63D0FBAF-D285-4BB3-91A2-DD1C365948B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63D0FBAF-D285-4BB3-91A2-DD1C365948B4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{63D0FBAF-D285-4BB3-91A2-DD1C365948B4}.Debug|x64.Build.0 = Debug|Any CPU
+		{63D0FBAF-D285-4BB3-91A2-DD1C365948B4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{63D0FBAF-D285-4BB3-91A2-DD1C365948B4}.Debug|x86.Build.0 = Debug|Any CPU
+		{63D0FBAF-D285-4BB3-91A2-DD1C365948B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63D0FBAF-D285-4BB3-91A2-DD1C365948B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63D0FBAF-D285-4BB3-91A2-DD1C365948B4}.Release|x64.ActiveCfg = Release|Any CPU
+		{63D0FBAF-D285-4BB3-91A2-DD1C365948B4}.Release|x64.Build.0 = Release|Any CPU
+		{63D0FBAF-D285-4BB3-91A2-DD1C365948B4}.Release|x86.ActiveCfg = Release|Any CPU
+		{63D0FBAF-D285-4BB3-91A2-DD1C365948B4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,6 +51,7 @@ Global
 		SolutionGuid = {A9114252-5637-4FF0-9541-383601748AD5}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		PuzzleSharp\PuzzleSharp.projitems*{63d0fbaf-d285-4bb3-91a2-dd1c365948b4}*SharedItemsImports = 5
 		PuzzleSharp\PuzzleSharp.projitems*{ef34b43a-6545-4463-a91c-59ac8c091bd5}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal

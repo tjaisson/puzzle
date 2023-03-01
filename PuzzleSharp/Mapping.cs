@@ -9,6 +9,7 @@ namespace PuzzleSharp
 {
     internal class Mapping
     {
+        public const byte CV = 0xFF;
         private Dictionary<byte, char> b2c = new Dictionary<byte, char>();
         private Dictionary<char, byte> c2b = new Dictionary<char, byte>();
         public Size size;
@@ -20,7 +21,9 @@ namespace PuzzleSharp
         }
         public byte? C2B(char c)
         {
-            if (c == ' ') return Etat.CV;
+            if (c == ' ') {
+                return CV;
+            }
             if (c2b.TryGetValue(c, out var b))
             {
                 return b;
@@ -33,7 +36,7 @@ namespace PuzzleSharp
 
         public char? B2C(byte b)
         {
-            if (b == Etat.CV) return ' ';
+            if (b == CV) return ' ';
             if (b2c.TryGetValue(b, out var c))
             {
                 return c;
@@ -88,6 +91,7 @@ namespace PuzzleSharp
                     if (!b.HasValue) throw new Exception("Incohérence de dammier de départ");
                     items[i, j] = b.Value;
                     ++lLen;
+                    ++i;
                 }
                 if (lLen != size.Width) throw new Exception("Incohérence de dammier de départ");
                 ++j;
@@ -98,11 +102,11 @@ namespace PuzzleSharp
 
         public IEnumerable<string> UnMap(byte[,] items)
         {
-            for (int i = 0; i < size.Width; i++)
+            for (int j = 0; j < size.Height; j++)
             {
                 StringBuilder sb = new StringBuilder();
                 bool done = false;
-                for (int j = 0; j < size.Height; j++)
+                for (int i = 0; i < size.Width; i++)
                 {
                     if (done) sb.Append(' ');
                     done = true;

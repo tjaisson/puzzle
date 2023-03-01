@@ -42,6 +42,8 @@ namespace PuzzleSharp
             Etat etat = new Etat(map, depart);
             Etape etape = new Etape(etat, null, Mouv.RIEN, 0);
             pz.PushInLEAE(etape);
+            pz.CurrentEtape = etape;
+            pz.MinH = etat.h;
             return pz;
         }
 
@@ -52,9 +54,9 @@ namespace PuzzleSharp
             LEAE = new PriorityQueue<Etape, Etape>(Comparer<Etape>.Create(
                 (x, y) =>
                 {
-                    var d = x.f - y.f;
+                    var d = x.etat.h - y.etat.h;
                     if (d != 0) return d;
-                    return x.etat.h - y.etat.h;
+                    return x.g - y.g;
                 }
                 ));
         }
@@ -69,15 +71,24 @@ namespace PuzzleSharp
             return LEAE.TryDequeue(out etape, out var p);
         }
 
+        public int MinH;
+        public Etape CurrentEtape;
+        public int vus = 0;
         public Etape? Solve()
         {
             while(TryPopLEAE(out var etape))
             {
+                CurrentEtape = etape;
                 if (etape.etat.h == 0) return etape;
                 foreach (var mv in etape.mv.Nexts())
                 {
                     var nEtape = etape.NextEtape(mv);
-                    if ((nEtape != null) && etatsVus.Add(nEtape.etat)) PushInLEAE(nEtape);
+                    if ((nEtape != null) && etatsVus.Add(nEtape.etat))
+                    {
+                        vus = etatsVus.Count;
+                        if (nEtape.etat.h < MinH) MinH = nEtape.etat.h;
+                        PushInLEAE(nEtape);
+                    }
                 }
             }
             return null;
