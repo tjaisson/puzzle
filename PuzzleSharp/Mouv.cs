@@ -2,15 +2,15 @@
 {
     internal enum Mouv
     {
-        NORD = 0,
-        EST = 1,
-        SUD = 2,
-        OUEST = 3,
+        NORD,
+        EST,
+        SUD,
+        OUEST,
         RIEN
     }
     internal static class Mouvs
     {
-        public static IEnumerator<Mouv> Nexts(this Mouv m)
+        public static IEnumerable<Mouv> Nexts(this Mouv m)
         {
             var op = m.Oposite();
             foreach(var nm in All())

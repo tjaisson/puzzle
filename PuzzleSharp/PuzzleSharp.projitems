@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>ef34b43a-6545-4463-a91c-59ac8c091bd5</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>PuzzleSharp</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Etape.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Etat.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Mapping.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Mouv.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Puzzle.cs" />
+  </ItemGroup>
+</Project>

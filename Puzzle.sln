@@ -5,7 +5,7 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Puzzle", "Puzzle\Puzzle.vcxproj", "{3175AD57-099C-48CA-AF6C-06E009911718}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuzzleSharp", "PuzzleSharp\PuzzleSharp.csproj", "{C5F50FC1-6F5A-48D6-85EB-9BBEC4BE83E6}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "PuzzleSharp", "PuzzleSharp\PuzzleSharp.shproj", "{EF34B43A-6545-4463-A91C-59AC8C091BD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,23 +29,14 @@ Global
 		{3175AD57-099C-48CA-AF6C-06E009911718}.Release|x64.Build.0 = Release|x64
 		{3175AD57-099C-48CA-AF6C-06E009911718}.Release|x86.ActiveCfg = Release|Win32
 		{3175AD57-099C-48CA-AF6C-06E009911718}.Release|x86.Build.0 = Release|Win32
-		{C5F50FC1-6F5A-48D6-85EB-9BBEC4BE83E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C5F50FC1-6F5A-48D6-85EB-9BBEC4BE83E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C5F50FC1-6F5A-48D6-85EB-9BBEC4BE83E6}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{C5F50FC1-6F5A-48D6-85EB-9BBEC4BE83E6}.Debug|x64.Build.0 = Debug|Any CPU
-		{C5F50FC1-6F5A-48D6-85EB-9BBEC4BE83E6}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{C5F50FC1-6F5A-48D6-85EB-9BBEC4BE83E6}.Debug|x86.Build.0 = Debug|Any CPU
-		{C5F50FC1-6F5A-48D6-85EB-9BBEC4BE83E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C5F50FC1-6F5A-48D6-85EB-9BBEC4BE83E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C5F50FC1-6F5A-48D6-85EB-9BBEC4BE83E6}.Release|x64.ActiveCfg = Release|Any CPU
-		{C5F50FC1-6F5A-48D6-85EB-9BBEC4BE83E6}.Release|x64.Build.0 = Release|Any CPU
-		{C5F50FC1-6F5A-48D6-85EB-9BBEC4BE83E6}.Release|x86.ActiveCfg = Release|Any CPU
-		{C5F50FC1-6F5A-48D6-85EB-9BBEC4BE83E6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9114252-5637-4FF0-9541-383601748AD5}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		PuzzleSharp\PuzzleSharp.projitems*{ef34b43a-6545-4463-a91c-59ac8c091bd5}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal
